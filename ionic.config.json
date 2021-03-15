@@ -1,0 +1,7 @@
+{
+  "name": "restric-access",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
