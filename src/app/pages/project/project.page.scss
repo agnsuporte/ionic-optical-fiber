@@ -1,0 +1,21 @@
+.list-md {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.foot-button {
+  margin: 8px;
+  margin-inline: auto;
+}
+
+/* DOES NOT WORK - not specific enough */
+.modal-wrapper {
+    background: #222;
+  }
+  
+  /* Works - pass "my-custom-class" in cssClass to increase specificity */
+  .my-custom-class .modal-wrapper {
+    background: #222;
+  }
+
+  

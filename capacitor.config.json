@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "restric-access",
+  "appId": "com.agnsuporte.restricaccess",
+  "appName": "Restric Access",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",

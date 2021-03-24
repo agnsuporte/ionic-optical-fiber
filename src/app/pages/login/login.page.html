@@ -1,0 +1,82 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="primary" routerLink="/">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="onRegister()">Criar Conta</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="aba"></div>
+
+  <div class="avatar">
+    <img src="assets/avatar.svg" />
+  </div>
+
+  <ion-card>
+    <ion-card-content>
+      <form
+        [formGroup]="loginForm"
+        novalidate
+        (ngSubmit)="onSubmit()"
+        (keydown)="keyDownFunction($event)"
+      >
+        <ion-item>
+          <ion-label position="floating">E-mail</ion-label>
+          <ion-input
+            type="email"
+            autofocus="true"
+            formControlName="email"
+          ></ion-input>
+        </ion-item>
+        <div
+          *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].errors"
+        >
+          <ion-text
+            color="danger"
+            *ngIf="loginForm.controls['email'].hasError('required')"
+          >
+            <h4>O E-mail é <strong>Obrigatório</strong></h4>
+          </ion-text>
+          <ion-text
+            color="danger"
+            *ngIf="loginForm.controls['email'].hasError('email')"
+          >
+            <h4>Informe um <strong>E-amil</strong> válido.</h4>
+          </ion-text>
+        </div>
+
+        <ion-item>
+          <ion-label position="floating">Senha</ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+        <div
+          *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].errors"
+        >
+          <ion-text
+            color="danger"
+            *ngIf="loginForm.controls['password'].hasError('required')"
+          >
+            <h4>A senha é <strong>Obrigatório</strong></h4>
+          </ion-text>
+        </div>
+
+        <div class="actions-button">
+          <ion-button
+            type="submit"
+            color="primary"
+            fill="outline"
+            expand="block"
+            [disabled]="!loginForm.valid"
+            >Enviar</ion-button
+          >
+        </div>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
